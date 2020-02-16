@@ -4,8 +4,13 @@ import pandas as pd
 import numpy as np
 import pickle
 
+#uploading data
 data = pd.read_csv('incomePredictionData.data')
+
+#creating label for shift to integer data
 label_maker = preprocessing.LabelEncoder()
+
+#Transforming to Integer
 age = label_maker.fit_transform(data['age'])
 workclass = label_maker.fit_transform(data['workclass'])
 finalweight = label_maker.fit_transform(data['finalweight'])
@@ -21,6 +26,8 @@ capital_loss = label_maker.fit_transform(data['capital-loss'])
 hours_per_week = label_maker.fit_transform(data['hours-per-week'])
 native_country = label_maker.fit_transform(data['native-country'])
 moneys = label_maker.fit_transform(data['income'])
+
+#prediction
 predict = 'race'
 
 #ziping every line of data
